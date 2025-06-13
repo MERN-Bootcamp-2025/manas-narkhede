@@ -9,6 +9,8 @@ body {
   font-family: Arial, sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
+  height: 100%;
+  width: 100%;
 }
 
 .navbar ul {
@@ -22,12 +24,15 @@ body {
 .navbar a {
   color: white;
   text-decoration: none;
+
+ 
 }
 
 .hero {
   padding: 2rem;
   background: #fff;
   text-align: center;
+  
 }
 
 .feature-grid {

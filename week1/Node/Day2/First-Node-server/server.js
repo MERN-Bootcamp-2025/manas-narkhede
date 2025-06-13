@@ -71,7 +71,7 @@ server.listen(PORT, () => {
 });
 
 
-// README.md
+
 
 /*
 # Node.js Basic HTTP Server
