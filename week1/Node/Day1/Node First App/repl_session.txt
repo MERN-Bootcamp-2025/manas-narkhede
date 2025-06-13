@@ -1,0 +1,27 @@
+> 2 + 3
+5
+
+> global.console.log("Hello from global")
+Hello from global
+
+> process.env.MY_NAME = "Manas"
+'Manas'
+
+> process.env.MY_NAME
+'Manas'
+
+> const fs = require('fs')
+undefined
+
+> fs.writeFileSync('test.txt', 'Sample Text')
+
+> fs.readFileSync('test.txt', 'utf-8')
+'Sample Text'
+
+> const os = require('os')
+undefined
+
+> os.platform()
+'linux'
+
+> .exit
