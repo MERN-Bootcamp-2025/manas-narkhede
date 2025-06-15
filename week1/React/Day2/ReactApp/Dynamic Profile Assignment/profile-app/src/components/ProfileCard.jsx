@@ -3,9 +3,9 @@ import Header from './Header';
 import Skills from './Skills';
 import Contact from './Contact';
 import Bio from './Bio';
-import '../App.css';
+import '../App.css'; 
 
-const ProfileCard = ({
+const ProfileCard =({
   name = "Anonymous",
   title = "No Title",
   avatar,

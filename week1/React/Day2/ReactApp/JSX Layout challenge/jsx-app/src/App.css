@@ -58,10 +58,12 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
+  width: 100%;
 }
 
 .main-content {
   flex: 3;
+  width: 100%;
 }
 
 .sidebar {
@@ -76,4 +78,5 @@ body {
   color: white;
   text-align: center;
   padding: 1rem;
+  width: 100%;
 }
