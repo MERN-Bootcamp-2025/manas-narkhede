@@ -5,15 +5,20 @@ import './App.css'
 import AlexaImage from './images/alexa.png'
 import CortanaImage from './images/cortana.png'
 import SiriImage from './images/siri.png'
+import ProfileCard from './components /ProfileCard'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <img src={AlexaImage} alt="Alexa Image" />
+    <div className='container'>
+      {/* <img src={AlexaImage} alt="Alexa Image" />
       <img src={CortanaImage} alt="" />
-      <img src={SiriImage} alt="" />
+      <img src={SiriImage} alt="" /> */}
+
+      <ProfileCard title="Alexa" handle="@Alexa" image={AlexaImage}/>
+      <ProfileCard title="Cortana" handle="@Cortana" image={CortanaImage}/>
+      <ProfileCard title="Siri" handle="@siri" image={SiriImage}/>
+      
 
 
 
