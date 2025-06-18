@@ -1,0 +1,50 @@
+/* Theme container styling */
+.theme-container {
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* Theme toggle button */
+.theme-container button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #667eea;
+  color: white;
+  transition: 0.2s;
+}
+
+.theme-container button:hover {
+  background-color: #5a67d8;
+}
+
+.theme-label {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+/* Global light & dark theme styles using CSS variables */
+body.light-theme {
+  --bg-color: #f0f4f8;
+  --text-color: #1a202c;
+  --card-bg: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-theme {
+  --bg-color: #1a202c;
+  --text-color: #edf2f7;
+  --card-bg: #2d3748;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
