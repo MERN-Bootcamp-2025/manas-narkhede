@@ -20,11 +20,9 @@ It showcases usage of useState, event handling, controlled inputs, basic validat
 ✅ Hover Effects, Color Feedback
 
 🚀 Getting Started
-1. Clone the Repository
+1. Visit Repo
 
-git clone https://github.com/MERN-Bootcamp-2025/manas-narkhede/react-interactive-components.git
-
-cd react-interactive-components
+go to file : https://github.com/MERN-Bootcamp-2025/manas-narkhede/tree/bl-05/week2/React/react-app/src/Day5/Assignment
 
 
 2. Install Dependencies
