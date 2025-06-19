@@ -14,6 +14,8 @@ import ContactForm from './Day5/Assignment/ContactForm'
 import Counter from './Day5/Assignment/Counter'
 import Checklist from './Day5/Assignment/CheckList'
 import './Day5/Assignment/ThemeSwitcher.css'
+import TodoList from './Day6/Assignement/components /TodoList'
+
 
 function App() {
 
@@ -56,23 +58,42 @@ function App() {
   //Day5 Assignment
   
 
-  return <div className="app">
-      <ThemeSwitcher />
+  // return <div className="app">
+  //     <ThemeSwitcher />
 
-      <div className="component-grid">
-        <section className="card-section">
-          <Counter />
-        </section>
+  //     <div className="component-grid">
+  //       <section className="card-section">
+  //         <Counter />
+  //       </section>
 
-        <section className="card-section">
-          <ContactForm />
-        </section>
+  //       <section className="card-section">
+  //         <ContactForm />
+  //       </section>
 
-        <section className="card-section">
-          <Checklist />
-        </section>
-      </div>
-    </div>
+  //       <section className="card-section">
+  //         <Checklist />
+  //       </section>
+  //     </div>
+  //   </div>
+
+  //Day6 Assignment 
+
+  return <div>
+    <TodoList/>
+  </div>
+
+
+  //BookApp
+
+  // const[books, setBooks] =  useState([])
+
+  // const createBook = (title) =>{
+  //   console.log('Need to add book with :', title)
+  // };
+
+  // return <div>
+  //   <BookCreate onCreate={createBook}/>
+  // </div>
 
 }
 
