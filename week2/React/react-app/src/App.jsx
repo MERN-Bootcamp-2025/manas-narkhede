@@ -58,29 +58,29 @@ function App() {
   //Day5 Assignment
   
 
-  // return <div className="app">
-  //     <ThemeSwitcher />
+  return <div className="app">
+      <ThemeSwitcher />
 
-  //     <div className="component-grid">
-  //       <section className="card-section">
-  //         <Counter />
-  //       </section>
+      <div className="component-grid">
+        <section className="card-section">
+          <Counter />
+        </section>
 
-  //       <section className="card-section">
-  //         <ContactForm />
-  //       </section>
+        <section className="card-section">
+          <ContactForm />
+        </section>
 
-  //       <section className="card-section">
-  //         <Checklist />
-  //       </section>
-  //     </div>
-  //   </div>
+        <section className="card-section">
+          <Checklist />
+        </section>
+      </div>
+    </div>
 
   //Day6 Assignment 
 
-  return <div>
-    <TodoList/>
-  </div>
+  // return <div>
+  //   <TodoList/>
+  // </div>
 
 
   //BookApp
