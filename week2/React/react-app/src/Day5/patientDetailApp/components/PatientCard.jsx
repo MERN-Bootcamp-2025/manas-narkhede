@@ -1,7 +1,7 @@
 import React from 'react';
 import '../PatientForm.css';
 
-const PatientCard = ({ patient }) => {
+const PatientCard = ({ patient, onEdit, onDelete }) => {
   return (
     <div className="patient-card">
       <h3>{patient.firstName} {patient.lastName}</h3>
@@ -14,6 +14,10 @@ const PatientCard = ({ patient }) => {
         <p><strong>Medical History:</strong> {patient.medicalHistory}</p>
       )}
       <small className="timestamp">Added on {patient.dateAdded} at {patient.timeAdded}</small>
+      <div className="card-actions">
+        <button onClick={() => onEdit(patient)} className="edit-btn">Edit</button>
+        <button onClick={() => onDelete(patient.id)} className="delete-btn">Delete</button>
+      </div>
     </div>
   );
 };

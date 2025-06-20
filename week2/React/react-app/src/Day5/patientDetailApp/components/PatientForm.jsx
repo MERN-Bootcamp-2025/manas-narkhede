@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import '../PatientForm.css';
 
-const PatientForm = ({ onAddPatient }) => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    age: '',
-    gender: '',
-    address: '',
-    medicalHistory: ''
-  });
-
+const PatientForm = ({ 
+  formData, 
+  setFormData, 
+  editingPatient, 
+  onAddPatient, 
+  onUpdatePatient, 
+  clearEdit 
+}) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -83,44 +79,36 @@ const PatientForm = ({ onAddPatient }) => {
   const handleSubmit = async () => {
     if (validateForm()) {
       setIsSubmitting(true);
-      
-      const newPatient = {
-        id: Date.now(),
-        ...formData,
-        dateAdded: new Date().toLocaleDateString(),
-        timeAdded: new Date().toLocaleTimeString()
-      };
-      
-      await onAddPatient(newPatient);
-      
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        age: '',
-        gender: '',
-        address: '',
-        medicalHistory: ''
-      });
-      
+
+      if (editingPatient) {
+        await onUpdatePatient({ ...formData });
+      } else {
+        const newPatient = {
+          id: Date.now(),
+          ...formData,
+          dateAdded: new Date().toLocaleDateString(),
+          timeAdded: new Date().toLocaleTimeString()
+        };
+        await onAddPatient(newPatient);
+      }
+
       setIsSubmitting(false);
+      clearEdit(); // clears form and edit mode
     }
   };
 
   return (
     <div className="form-container">
       <div className="form-header">
-        <h2 className="form-title">Add New Patient</h2>
-        <p className="form-subtitle">Enter patient information below</p>
+        <h1>Patient Management System</h1>
+        <h2 className="form-title">{editingPatient ? 'Edit Patient' : 'Add New Patient'}</h2>
+        {/* <p className="form-subtitle">Enter patient information below</p> */}
       </div>
-      
+
       <div className="form-content">
         <div className="form-row">
           <div className="input-group">
-            <label className="input-label">
-              First Name *
-            </label>
+            <label className="input-label">First Name *</label>
             <input
               type="text"
               name="firstName"
@@ -129,15 +117,11 @@ const PatientForm = ({ onAddPatient }) => {
               className={`form-input ${errors.firstName ? 'input-error' : ''}`}
               placeholder="Enter first name"
             />
-            {errors.firstName && (
-              <span className="error-message">{errors.firstName}</span>
-            )}
+            {errors.firstName && <span className="error-message">{errors.firstName}</span>}
           </div>
 
           <div className="input-group">
-            <label className="input-label">
-              Last Name *
-            </label>
+            <label className="input-label">Last Name *</label>
             <input
               type="text"
               name="lastName"
@@ -146,17 +130,13 @@ const PatientForm = ({ onAddPatient }) => {
               className={`form-input ${errors.lastName ? 'input-error' : ''}`}
               placeholder="Enter last name"
             />
-            {errors.lastName && (
-              <span className="error-message">{errors.lastName}</span>
-            )}
+            {errors.lastName && <span className="error-message">{errors.lastName}</span>}
           </div>
         </div>
 
         <div className="form-row">
           <div className="input-group">
-            <label className="input-label">
-              Email Address *
-            </label>
+            <label className="input-label">Email Address *</label>
             <input
               type="email"
               name="email"
@@ -165,15 +145,11 @@ const PatientForm = ({ onAddPatient }) => {
               className={`form-input ${errors.email ? 'input-error' : ''}`}
               placeholder="Enter email address"
             />
-            {errors.email && (
-              <span className="error-message">{errors.email}</span>
-            )}
+            {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
 
           <div className="input-group">
-            <label className="input-label">
-              Phone Number *
-            </label>
+            <label className="input-label">Phone Number *</label>
             <input
               type="tel"
               name="phone"
@@ -182,17 +158,13 @@ const PatientForm = ({ onAddPatient }) => {
               className={`form-input ${errors.phone ? 'input-error' : ''}`}
               placeholder="Enter phone number"
             />
-            {errors.phone && (
-              <span className="error-message">{errors.phone}</span>
-            )}
+            {errors.phone && <span className="error-message">{errors.phone}</span>}
           </div>
         </div>
 
         <div className="form-row">
           <div className="input-group">
-            <label className="input-label">
-              Age *
-            </label>
+            <label className="input-label">Age *</label>
             <input
               type="number"
               name="age"
@@ -203,15 +175,11 @@ const PatientForm = ({ onAddPatient }) => {
               min="1"
               max="120"
             />
-            {errors.age && (
-              <span className="error-message">{errors.age}</span>
-            )}
+            {errors.age && <span className="error-message">{errors.age}</span>}
           </div>
 
           <div className="input-group">
-            <label className="input-label">
-              Gender *
-            </label>
+            <label className="input-label">Gender *</label>
             <select
               name="gender"
               value={formData.gender}
@@ -223,16 +191,12 @@ const PatientForm = ({ onAddPatient }) => {
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
-            {errors.gender && (
-              <span className="error-message">{errors.gender}</span>
-            )}
+            {errors.gender && <span className="error-message">{errors.gender}</span>}
           </div>
         </div>
 
         <div className="input-group full-width">
-          <label className="input-label">
-            Address *
-          </label>
+          <label className="input-label">Address *</label>
           <textarea
             name="address"
             value={formData.address}
@@ -241,15 +205,11 @@ const PatientForm = ({ onAddPatient }) => {
             placeholder="Enter complete address"
             rows="3"
           />
-          {errors.address && (
-            <span className="error-message">{errors.address}</span>
-          )}
+          {errors.address && <span className="error-message">{errors.address}</span>}
         </div>
 
         <div className="input-group full-width">
-          <label className="input-label">
-            Medical History
-          </label>
+          <label className="input-label">Medical History</label>
           <textarea
             name="medicalHistory"
             value={formData.medicalHistory}
@@ -265,7 +225,9 @@ const PatientForm = ({ onAddPatient }) => {
           className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Adding Patient...' : 'Add Patient'}
+          {isSubmitting
+            ? (editingPatient ? 'Updating...' : 'Adding...')
+            : (editingPatient ? 'Update Patient' : 'Add Patient')}
         </button>
       </div>
     </div>

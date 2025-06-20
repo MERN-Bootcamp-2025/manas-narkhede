@@ -17,11 +17,14 @@ import './Day5/Assignment/ThemeSwitcher.css'
 import TodoList from './Day6/Assignement/components /TodoList'
 
 
+import CharacterSearch from './Day7/SearchFormApp/components/CharacterSearch';
+
+
 function App() {
 
   //DAY 5
 
-  //Image Rendering 
+  // Image Rendering 
 
   // const[images, setImages] = useState([])
 
@@ -41,40 +44,99 @@ function App() {
 
   //Patient Form 
 
-  // const [patients, setPatients] = useState([]);
+// const [patients, setPatients] = useState([]);
+//   const [editingPatient, setEditingPatient] = useState(null);
+//   const [formData, setFormData] = useState({
+//     firstName: '',
+//     lastName: '',
+//     email: '',
+//     phone: '',
+//     age: '',
+//     gender: '',
+//     address: '',
+//     medicalHistory: ''
+//   });
 
-  // const handleAddPatient = (newPatient) => {
-  //   setPatients(prev => [newPatient, ...prev]);
-  // };
+//   const handleAddPatient = (newPatient) => {
+//     setPatients(prev => [newPatient, ...prev]);
+//   };
 
-  // return (
-  //   <div>
-  //     <PatientForm onAddPatient={handleAddPatient} />
-  //     <PatientList patients={patients} />
-  //   </div>
-  // );
+//   const handleEditPatient = (patient) => {
+//     setEditingPatient(patient);
+//     setFormData(patient);
+//   };
+
+//   const handleUpdatePatient = (updatedPatient) => {
+//     setPatients(prev =>
+//       prev.map(p => (p.id === updatedPatient.id ? updatedPatient : p))
+//     );
+//     clearEdit();
+//   };
+
+//   const handleDeletePatient = (id) => {
+//     if (window.confirm("Are you sure you want to delete this patient?")) {
+//       setPatients(prev => prev.filter(p => p.id !== id));
+//     }
+//   };
+
+//   const clearEdit = () => {
+//     setEditingPatient(null);
+//     setFormData({
+//       firstName: '',
+//       lastName: '',
+//       email: '',
+//       phone: '',
+//       age: '',
+//       gender: '',
+//       address: '',
+//       medicalHistory: ''
+//     });
+//   };
+
+//   return (
+//     <div>
+//       {/* <h1 style={{ textAlign: 'center', margin: '20px 0', color: '#4c51bf' }}>
+//         🏥 Patient Management System
+//       </h1> */}
+
+//       <PatientForm
+//         formData={formData}
+//         setFormData={setFormData}
+//         editingPatient={editingPatient}
+//         onAddPatient={handleAddPatient}
+//         onUpdatePatient={handleUpdatePatient}
+//         clearEdit={clearEdit}
+//       />
+
+//       <PatientList
+//         patients={patients}
+//         onEdit={handleEditPatient}
+//         onDelete={handleDeletePatient}
+//       />
+//     </div>
+//   );
 
 
   //Day5 Assignment
   
 
-  return <div className="app">
-      <ThemeSwitcher />
+  // return <div className="app">
+  //     <ThemeSwitcher />
 
-      <div className="component-grid">
-        <section className="card-section">
-          <Counter />
-        </section>
+  //     <div className="component-grid">
+  //       <section className="card-section">
+  //         <Counter />
+  //       </section>
 
-        <section className="card-section">
-          <ContactForm />
-        </section>
+  //       <section className="card-section">
+  //         <ContactForm />
+  //       </section>
 
-        <section className="card-section">
-          <Checklist />
-        </section>
-      </div>
-    </div>
+  //       <section className="card-section">
+  //         <Checklist />
+  //       </section>
+  //     </div>
+  //   </div>
 
   //Day6 Assignment 
 
@@ -95,6 +157,24 @@ function App() {
   //   <BookCreate onCreate={createBook}/>
   // </div>
 
-}
+
+
+  //Day7 
+
+  //API Fetch Assignment 
+
+  return (
+    <div className="app-container">
+      <CharacterSearch />
+    </div>
+  );
+
+
+
+};
+
+
+
+
 
 export default App

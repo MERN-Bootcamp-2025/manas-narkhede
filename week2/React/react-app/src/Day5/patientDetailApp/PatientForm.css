@@ -8,7 +8,7 @@
   overflow: hidden;
   transition: all 0.3s ease;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 20px auto 40px auto;
   padding: 20px;
 }
 
@@ -285,4 +285,41 @@
   display: block;
   margin-top: 12px;
   font-style: italic;
+}
+
+.card-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #3182ce;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #2b6cb0;
+}
+
+.delete-btn:hover {
+  background-color: #c53030;
+}
+
+
+body {
+  background-color: white;
 }
